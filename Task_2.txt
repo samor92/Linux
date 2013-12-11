@@ -1,0 +1,1 @@
+last -ia | head -n -1 | rev | cut -f1 -d " " | rev | sort -r | uniq

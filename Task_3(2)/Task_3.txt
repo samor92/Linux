@@ -1,0 +1,4 @@
+1) cut -f4 -d: /etc/group | sed '/^$/d' | sort | uniq -c
+2) cut -f4 -d: /etc/group | grep -v '^$' | sort | uniq -c
+3)awk -F ":" '$4!~/^$/ {if(a[$4]++ ==0) print $4}'  /etc/group 
+4) awk -F ":" '$4!~/^$/ {a[$4]++}END{for(i in a){if(a[i])print i,a[i]}}'  /etc/group |sort
